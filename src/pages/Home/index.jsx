@@ -22,7 +22,11 @@ function Home() {
    async function registerNewUser(){
      const data = await api.post('/usuarios',{
         email: inputEmail.current.value,
+<<<<<<< HEAD
         age:parseInt(inputAge.current.value),
+=======
+        age: parseInt(inputAge.current.value),
+>>>>>>> e8f7d3231d5ca8fb3fcc8767d5b79f54a93981f0
         name: inputName.current.value
       })
 
