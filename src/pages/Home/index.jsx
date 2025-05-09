@@ -20,11 +20,14 @@ function Home() {
     const inputEmail = useRef()
 
    async function registerNewUser(){
-      await api.post('/usuarios', {
+     const cadastrado =  await api.post('/usuarios', {
         email: inputEmail.current.value,
         age: parseInt(inputAge.current.value),
         name: inputName.current.value
       })
+
+      alert("Usuario cadastrado")
+      console.log(cadastrado)//depois remove
 
       
     }
