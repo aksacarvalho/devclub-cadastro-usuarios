@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { GlobalStyles } from './styles/GlobalStyles.js'
-import ListUsers from './pages/ListUsers/index.jsx'
 import { RouterProvider } from 'react-router-dom'
 import router from './routes.jsx'
 
