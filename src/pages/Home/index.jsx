@@ -9,10 +9,12 @@ import {
   ContainerInputs,
   Input,
   InputLabel,
-  Button,
+  
 } from './styles'
 
 import UsersImage from '../../assets/users.png'
+import { Button } from '../../components/Button'
+
 
 function Home() {
     const inputName = useRef()
