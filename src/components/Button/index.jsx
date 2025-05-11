@@ -7,4 +7,4 @@ function DefaultButton(){
       )
 }
 
-export default DefaultButton
+export default Button
