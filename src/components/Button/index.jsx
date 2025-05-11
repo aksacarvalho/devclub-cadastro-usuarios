@@ -3,7 +3,7 @@ import { Button } from './styles'
 function DefaultButton(){
        
       return (
-            <Button>ok ok</Button>
+            <Button></Button>
       )
 }
 
