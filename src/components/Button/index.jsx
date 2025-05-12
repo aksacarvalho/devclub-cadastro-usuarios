@@ -1,10 +1,12 @@
 import { Button } from './styles'
 
-function DefaultButton(){
-       
+function DefaultButton({ children, ...props }){
+   // spread operator -> Todo o resto    
+     
+     console.log(props)
       return (
-            <Button></Button>
+            <Button {...props}>{children}</Button>
       )
 }
 
-export default Button
+export default DefaultButton

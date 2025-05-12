@@ -4,7 +4,6 @@ import api from '../../services/api'
 import {
   Title,
   Container,
-  TopBackground,
   Form,
   ContainerInputs,
   Input,
@@ -12,8 +11,9 @@ import {
   
 } from './styles'
 
-import UsersImage from '../../assets/users.png'
+
 import  Button  from  '../../components/Button'
+import TopBackground from '../../components/TopBackground'
 
 
 function Home() {
@@ -36,12 +36,12 @@ function Home() {
 
  return (
     <Container>
-      <TopBackground>
-        <img src={UsersImage} alt='imagem-usuarios'/>
-      </TopBackground>
+       <TopBackground />
+     
 
       <Form>
         <Title>Cadastro Usuário</Title>
+           
 
         <ContainerInputs>
           <div>
@@ -68,7 +68,7 @@ function Home() {
           </div>
         
 
-        <Button type='button' onClick={registerNewUser}></Button>
+        <Button type='button' onClick={registerNewUser}>Cadastra Usuário</Button>
       </Form>
     </Container>
   );
