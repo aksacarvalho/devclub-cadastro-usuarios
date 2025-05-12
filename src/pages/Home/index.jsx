@@ -13,7 +13,7 @@ import {
 } from './styles'
 
 import UsersImage from '../../assets/users.png'
-import Button from '../../components/Button'
+import  Button  from  '../../components/Button'
 
 
 function Home() {
