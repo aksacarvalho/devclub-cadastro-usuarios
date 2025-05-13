@@ -68,8 +68,10 @@ function Home() {
           </div>
         
 
-        <Button type='button' onClick={registerNewUser}>Cadastra Usuário</Button>
+        <Button type='button' onClick={registerNewUser} theme="primary">Cadastra Usuário</Button>
       </Form>
+
+      <Button type='button'>Ver Lista de Usuários</Button>
     </Container>
   );
 }
