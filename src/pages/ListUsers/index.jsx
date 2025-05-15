@@ -25,8 +25,8 @@ function ListUsers() {
  
       <h1>Listagem de Usuários</h1>
 
-      {users.map( user => (
-        <div>
+      {users.map( (user) => (
+        <div key={user.id}>
            <p>{user.name}</p>
            <p>{user.email}</p>
            <p>{user.age}</p>
