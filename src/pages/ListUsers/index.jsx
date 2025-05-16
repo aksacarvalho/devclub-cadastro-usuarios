@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import api from "../../services/api";
 
@@ -15,8 +16,10 @@ import {
   AvatarUser,
 } from "./styles";
 
+
 function ListUsers() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function getUsers() {
@@ -24,8 +27,17 @@ function ListUsers() {
 
       setUsers(data);
     }
-    getUsers();
-  }, []);
+    getUsers()
+  }, [])
+
+
+  async function deleteUsers(id){
+     await api.delete(`/usuarios/${id}`)
+
+     const upadatedUsers = users.filter( user => user.id !== id)
+
+     setUsers(upadatedUsers)
+  }
 
   return (
     <Container>
@@ -41,12 +53,12 @@ function ListUsers() {
               <p>{user.age}</p>
               <p>{user.email}</p>
             </div>
-            <TrashIcon src={Trash} alt='icone-lixo'/>
+            <TrashIcon src={Trash} alt='icone-lixo' onClick={() => deleteUsers(user.id)}/>
           </CardUsers>
         ))}
       </ContainerUsers>
 
-      <Button type="button">Voltar</Button>
+      <Button type="button" onClick={() => navigate('/')}>Voltar</Button>
     </Container>
   );
 }
