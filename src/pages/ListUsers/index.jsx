@@ -4,37 +4,50 @@ import api from "../../services/api";
 
 import Button from "../../components/Button";
 import TopBackground from "../../components/TopBackground";
+import Trash from '../../assets/trash.svg'
+
+import {
+  Container,
+  ContainerUsers,
+  CardUsers,
+  TrashIcon,
+  Title,
+  AvatarUser,
+} from "./styles";
 
 function ListUsers() {
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     async function getUsers() {
       const { data } = await api.get("/usuarios");
-      
-      setUsers(data)
-      
+
+      setUsers(data);
     }
     getUsers();
   }, []);
 
   return (
-    <div>
+    <Container>
       <TopBackground />
+      <Title>Lista de Usuários</Title>
 
- 
-      <h1>Listagem de Usuários</h1>
+      <ContainerUsers>
+        {users.map((user) => (
+          <CardUsers key={user.id}>
+            <AvatarUser src={`https://avatar.iran.liara.run/public/?username=${user.id}`}/>
+            <div>
+              <h3>{user.name}</h3>
+              <p>{user.age}</p>
+              <p>{user.email}</p>
+            </div>
+            <TrashIcon src={Trash} alt='icone-lixo'/>
+          </CardUsers>
+        ))}
+      </ContainerUsers>
 
-      {users.map( (user) => (
-        <div key={user.id}>
-           <p>{user.name}</p>
-           <p>{user.email}</p>
-           <p>{user.age}</p>
-        </div>
-      
-      ))}
-      <Button>Voltar</Button>
-    </div>
+      <Button type="button">Voltar</Button>
+    </Container>
   );
 }
 
